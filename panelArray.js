@@ -239,7 +239,7 @@ define([
                 var areaExtent = graphicsUtils.graphicsExtent([new Graphic(this.panel_area)]).expand(3);
                 var polygons = getPolygons(areaExtent, this.orientation, this.panel_size.width, this.panel_size.depth, this.angle, this.row_spacing, this.panel_area);
                 var highlightedSymbol = new SimpleFillSymbol(SimpleFillSymbol.STYLE_SOLID, null,
-                    new Color([25, 111, 166, 0.7]));
+                    new Color([255, 255, 1, 1]));
 
                 for (var i = 0; i < polygons.length; i++) {
                     result.push(new Graphic(polygons[i], highlightedSymbol));
