@@ -63,12 +63,12 @@
     </style>
 
     <script>
-        var dojoConfig = {
-            packages: [{
-                "name": "myModules",
-                "location": location.pathname.replace(/\/[^/]+$/, "") + "myModules"
-            }]
-        };
+        //var dojoConfig = {
+        //    packages: [{
+        //        "name": "myModules",
+        //        "location": location.pathname.replace(/\/[^/]+$/, "") + "myModules"
+        //    }]
+        //};
     </script>
     <script src="https://js.arcgis.com/3.42/"></script>
     <script>
@@ -81,7 +81,7 @@
             "esri/map", "esri/undoManager", "esri/toolbars/draw",
             "esri/symbols/SimpleMarkerSymbol", "esri/symbols/SimpleLineSymbol",
             "esri/symbols/SimpleFillSymbol", "esri/graphic",
-            "myModules/customoperation", "myModules/panelArray",
+            "./myModules/customoperation.js", "./myModules/panelArray.js",
             "dojo/_base/connect", "esri/Color", "dojo/parser", "dijit/registry",
 
             "dijit/form/Button", "dijit/layout/BorderContainer", "dijit/layout/ContentPane",
@@ -149,17 +149,17 @@
 
             function addGraphic(evt) {
                 //create a random color for the symbols
-                var r = Math.floor(Math.random() * 255);
-                var g = Math.floor(Math.random() * 255);
-                var b = Math.floor(Math.random() * 255);
+                var r = 30;
+                var g = 10;
+                var b = 40;
 
                 var symbol = new SimpleFillSymbol(
                     SimpleFillSymbol.STYLE_SOLID,
                     new SimpleLineSymbol(
                         SimpleLineSymbol.STYLE_SOLID,
-                        new Color([r, g, b, 0.9]),
+                        new Color([r, g, b, 0.7]),
                         4
-                    ), new Color([r, g, b, 0.5]));
+                    ), new Color([r, g, b, 0.4]));
 
 
                 var graphic = new Graphic(evt.geometry, symbol);
@@ -168,7 +168,7 @@
                     addedGraphic: graphic
                 });
 
-                undoManager.add(operation);
+                //undoManager.add(operation);
                 map.graphics.add(graphic);
             }
 
