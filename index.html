@@ -81,7 +81,7 @@
             "esri/map", "esri/undoManager", "esri/toolbars/draw",
             "esri/symbols/SimpleMarkerSymbol", "esri/symbols/SimpleLineSymbol",
             "esri/symbols/SimpleFillSymbol", "esri/graphic",
-            "./myModules/customoperation.js", "./myModules/panelArray.js",
+            "customoperation.js", "panelArray.js",
             "dojo/_base/connect", "esri/Color", "dojo/parser", "dijit/registry",
 
             "dijit/form/Button", "dijit/layout/BorderContainer", "dijit/layout/ContentPane",
@@ -157,9 +157,9 @@
                     SimpleFillSymbol.STYLE_SOLID,
                     new SimpleLineSymbol(
                         SimpleLineSymbol.STYLE_SOLID,
-                        new Color([r, g, b, 0.7]),
+                        new Color([255, 0, 0, 1]),
                         4
-                    ), new Color([r, g, b, 0.4]));
+                    ), new Color([r, g, b, 0.2]));
 
 
                 var graphic = new Graphic(evt.geometry, symbol);
